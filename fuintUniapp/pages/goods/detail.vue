@@ -275,19 +275,19 @@
 			wx.getLocation({ //获取当前经纬度
 				type: 'wgs84', //返回可以用于wx.openLocation的经纬度，
 				success: function (res) {
-				console.log("wx.getLocation == ", res);
-				wx.openLocation({ //使用微信内置地图查看位置。
-					latitude: latitude, //要去的纬度-地址
-					longitude: longitude, //要去的经度-地址
-					name: name,
-					address: address,
-					fail: function () {
-					  console.log("111")
-					}
-				})
+          console.log("wx.getLocation == ", res);
+          wx.openLocation({ //使用微信内置地图查看位置。
+            latitude: latitude, //要去的纬度-地址
+            longitude: longitude, //要去的经度-地址
+            name: name,
+            address: address,
+            fail: function () {
+              console.log("111")
+            }
+          })
 				},
 				fail: function (res) {
-				  console.log("222")
+				  console.log("wx.getLocation failed, res = ", res);
 				}
 			})
 		},
