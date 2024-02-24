@@ -82,11 +82,11 @@
           </template>
         </el-table-column>
 
-        <el-table-column prop="czCount" label="储值卡">
+        <!-- <el-table-column prop="czCount" label="储值卡">
           <template slot-scope="scope">
             ￥ {{scope.row.czCount}} 元
           </template>
-        </el-table-column>
+        </el-table-column> -->
 
         <el-table-column prop="commission" label="总计">
           <template slot-scope="scope">

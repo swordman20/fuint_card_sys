@@ -102,7 +102,7 @@
           <span v-if="scope.row.comType=='1'">项目</span>
           <span v-if="scope.row.comType=='2'">商品</span>
           <span v-if="scope.row.comType=='4'">次卡</span>
-          <span v-if="scope.row.comType=='5'">储值卡</span>
+          <!-- <span v-if="scope.row.comType=='5'">储值卡</span> -->
         </template>
       </el-table-column>
 

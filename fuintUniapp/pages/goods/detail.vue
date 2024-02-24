@@ -24,7 +24,9 @@
       <view class="info-item info-item__name dis-flex flex-y-center">
         <view class="goods-name flex-box">
           <text class="twolist-hidden" style="font-size:38rpx;">{{ storeDto.name }}</text>
-		  <view class="address" @click="navRoad" style="padding-top: 25rpx;"><text class="location-icon iconfont icon-dingwei"></text>{{storeDto.address}}
+		  <view class="address" @click="navigation" style="padding-top: 25rpx;">
+        <text class="location-icon iconfont icon-dingwei"></text>
+        {{storeDto.address}}
 				<!-- <image src="https://www.gtsmhlife.com/static/location.jpg" style=""></image> -->
 		  </view>
 		  <view class="phone" @click="Call" style="padding-top: 25rpx;"><text>联系电话：</text>{{storeDto.phone}}
@@ -78,11 +80,11 @@
           <!-- <view class="desc-selling_point dis-flex">
             <text class="onelist-hidden">{{ dataItem.sellingPoint }}</text>
           </view> -->
-          <view class="receive left-box">
+          <!-- <view class="receive left-box">
             <text v-if="couponItem.type === 'C'">立即领取</text>
             <text v-if="couponItem.type === 'P'">立即预存</text>
             <text v-if="couponItem.type === 'T'">限使{{ couponItem.outRule }}次</text>
-          </view>
+          </view> -->
 
           <view class="txt">
             <text>{{ couponItem.name }}</text>
@@ -177,7 +179,7 @@
   import SkuPopup from './components/SkuPopup'
   import * as settingApi from '@/api/setting'
 
-  // var amapFile = require('../../libs/qqmap-wx-jssdk.min');
+  var QQMapWX = require('../../api/qqmap-wx-jssdk.min.js');
 
   export default {
     components: {
@@ -213,39 +215,6 @@
 				}]
       }
     },
-
-    // 导航
-  navigation(){
-    var that = this;
-    var qqmapsdk = new amapFile({
-      key: 'TEKBZ-7WW34-BRBUY-KIOQ3-77AOE-B6B66'
-    });
-    let name=this.storeDto.name
-    let address=this.storeDto.address
-    qqmapsdk.geocoder({
-      address: address,
-      success: function(res) {
-        // 经度lng  	纬度lat
-        let latitude=res.result.location.lat
-        let longitude=res.result.location.lng
-        console.log(res,'res')
-        wx.getLocation({//获取当前经纬度
-          type: 'wgs84', //返回可以用于wx.openLocation的经纬度，
-          success: function (res) {
-            wx.openLocation({ //使用微信内置地图查看位置。
-              latitude: this.storeDto.latitude, //要去的纬度-地址
-              longitude: this.storeDto.longitude, //要去的经度-地址
-              name: this.storeDto.name,
-              address: this.storeDto.address
-            })
-          }
-        })
-      },
-      complete: res => {
-        console.log(res.result.location)
-      }
-    })
-  },
 
     onShow() {
       this.onRefreshPage()
@@ -291,6 +260,36 @@
 				}
 			})
 		},
+
+      // 导航
+    navigation(){
+      var qqmapsdk = new QQMapWX({
+        key: 'TEKBZ-7WW34-BRBUY-KIOQ3-77AOE-B6B66'
+      });
+      let address=this.storeDto.address
+      console.log(this.storeDto.address)
+      qqmapsdk.geocoder({
+        address: address,
+        success: function(res) {
+          // 经度lng  	纬度lat
+          let latitude=res.result.location.lat
+          let longitude=res.result.location.lng
+          console.log(res,'res')
+          wx.getLocation({//获取当前经纬度
+            type: 'wgs84', //返回可以用于wx.openLocation的经纬度，
+            success: function (res) {
+              wx.openLocation({ //使用微信内置地图查看位置。
+                latitude, //要去的纬度-地址
+                longitude, //要去的经度-地址
+              })
+            }
+          })
+        },
+        // complete: res => {
+        //   console.log(res.result.location)
+        // }
+      })
+    },
 
 		navToEndPoint() {
 			let plugin = requirePlugin('routePlan');

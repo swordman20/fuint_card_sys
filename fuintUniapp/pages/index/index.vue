@@ -70,11 +70,11 @@
               <!-- <text>{{ couponItem.name }}</text>
               <button >使用</button> -->
               <view class="bottom" v-if="couponItem.status === 'A' || couponItem.status === 'B' || couponItem.status === 'E' ">
-                <view class="receive left-box">
+                <!-- <view class="receive left-box">
                   <text v-if="couponItem.type === 'C'">立即领取</text>
                   <text v-if="couponItem.type === 'P'">立即预存</text>
                   <text v-if="couponItem.type === 'T'">限使{{ couponItem.outRule }}次</text>
-                </view>
+                </view> -->
                 <view class="txt">
                   <text>{{ couponItem.name }}</text>
                 </view>
@@ -126,9 +126,9 @@
 		  </u-popup>      
 		</view>
 		
-		<view class="storeIn" mode="widthFix" @click="show = true">
+		<!-- <view class="storeIn" mode="widthFix" @click="show = true">
 			<image src="https://www.gtsmhlife.com/static/storeIn.png" style="width: 150rpx;height: 110rpx;"></image>
-		</view>
+		</view> -->
 
     </block>
   </view>

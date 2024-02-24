@@ -4,15 +4,15 @@
       <view class="header"></view>
     </view>
     <view class="auth-title">申请获取以下权限</view>
-    <view>
+    <!-- <view>
         <view class="auth-subtitle">获得你的公开信息（昵称、头像等）</view>
         <view class="login-btn">
           <button class="button btn-normal" @click.stop="doAuth()">授权登录</button>
         </view>
-    </view>
-    <view class="no-login-btn">
+    </view> -->
+    <!-- <view class="no-login-btn">
       <button class="button btn-normal" @click="handleCancel">暂不登录</button>
-    </view>
+    </view> -->
   </view>
 </template>
 

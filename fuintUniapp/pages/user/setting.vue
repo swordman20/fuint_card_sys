@@ -13,7 +13,7 @@
           <input class="weui-input value" type="nickname" @blur="getnickname" v-model="nickname" placeholder="请输入称呼"/>
         </view>
       </view>
-      <!-- <view class="info-item">
+      <view class="info-item">
         <view class="contacts">
           <text class="name">手机</text>
           <button class="button btn-normal value" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
@@ -21,7 +21,7 @@
               <text style="color: #f9211c;margin-left: 2px;">更换手机号</text>
           </button>
         </view>
-      </view> -->
+      </view>
       <!-- <view class="info-item">
         <view class="contacts">
           <text class="name">性别</text>
@@ -178,6 +178,7 @@
               app.isLoading = false
               app.$success('保存成功！')
          })
+         this.$navTo('pages/user/index')
       },
       /**
        * 退出登录

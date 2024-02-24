@@ -90,20 +90,20 @@
             <text>优惠券</text>
           </view>
         </view>
-        <view class="asset-left-item" @click="onTargetMyCoupon('P')">
-          <view class="item-value dis-flex flex-x-center">
-            <text>{{ isLogin ? assets.prestore : '0' }}</text>
-          </view>
-          <view class="item-name dis-flex flex-x-center">
-            <text>储值卡</text>
-          </view>
-        </view>
         <view class="asset-left-item" @click="onTargetMyCoupon('T')">
           <view class="item-value dis-flex flex-x-center">
             <text>{{ isLogin ? assets.timer : '0' }}</text>
           </view>
           <view class="item-name dis-flex flex-x-center">
             <text>计次卡</text>
+          </view>
+        </view>
+        <view class="asset-left-item" >  <!--@click="onTargetMyCoupon('P')"-->
+          <view class="item-value dis-flex flex-x-center">
+            <!--  <text>{{ isLogin ? assets.prestore : '' }}</text> -->
+          </view>
+          <view class="item-name dis-flex flex-x-center">
+            <!-- <text></text> -->
           </view>
         </view>
       </view>
@@ -169,10 +169,11 @@
     // { id: 'coupon', name: '转赠记录', icon: 'lingquan', type: 'link', url: 'pages/give/index' },
     // { id: 'points', name: '我的积分', icon: 'jifen', type: 'link', url: 'pages/points/detail' },
     // { id: 'help', name: '我的帮助', icon: 'bangzhu', type: 'link', url: 'pages/help/index' },
-    // { id: 'contact', name: '在线客服', icon: 'kefu', type: 'button', openType: 'contact' },
+    { id: 'contact', name: '在线客服', icon: 'kefu', type: 'button', openType: 'contact' },
     // { id: 'address', name: '收货地址', icon: 'shouhuodizhi', type: 'link', url: 'pages/address/index' },
     // { id: 'refund', name: '售后服务', icon: 'shouhou', type: 'link', url: 'pages/refund/index' },
     { id: 'setting', name: '个人信息', icon: 'shezhi1', type: 'link', url: 'pages/user/setting' },
+    { id: 'refund', name: '好店入驻', icon: 'bangzhu', type: 'link', url: 'pages/help/index' },
   ]
 
   export default {

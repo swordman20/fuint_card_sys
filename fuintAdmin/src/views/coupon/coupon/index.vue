@@ -321,7 +321,7 @@
         </div>
         <!-- 优惠券特有属性 end -->
         <!-- 储值卡特有属性 start -->
-        <div v-if="form.type == 'P'">
+        <!-- <div v-if="form.type == 'P'">
           <el-row>
             <el-col :span="24">
               <el-form-item label="预存规则" prop="storeItem">
@@ -335,7 +335,7 @@
               </el-form-item>
             </el-col>
           </el-row>
-        </div>
+        </div> -->
         <!-- 储值卡特有属性 end -->
         <!-- 计次卡特有属性 start -->
         <div v-if="form.type == 'T'">

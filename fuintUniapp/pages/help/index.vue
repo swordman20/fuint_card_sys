@@ -1,5 +1,16 @@
 <template>
-  <view class="container">
+  <view>
+    <image src="https://www.gtsmhlife.com/static/contact_us.png" style="width:100%;"></image>
+    <view style="text-align: center; padding-top: 10rpx;">
+      微信： <text @click="ctrlC">18866968853</text>
+    </view>
+    <view style="text-align: center; padding-top: 10rpx;">
+      联系电话： <text @click="ctrlC">18866968853</text>
+    </view>
+    <button  @click="Call" style="font-weight: bold;">加入我们 Join us</button>
+  </view>
+  <!-- <view class="container">
+    
     <mescroll-body ref="mescrollRef" :sticky="true" @init="mescrollInit" :down="{ use: false }" :up="upOption"
       @up="upCallback">
       <view class="help cont-box b-f" v-for="(item, index) in list.data" :key="index">
@@ -11,7 +22,7 @@
         </view>
       </view>
     </mescroll-body>
-  </view>
+  </view> -->
 </template>
 
 <script>
@@ -52,7 +63,19 @@
     onLoad(options) {},
 
     methods: {
-
+      ctrlC() {
+        uni.setClipboardData({
+          data: '18742034648',
+          success: function () {
+            console.log('success');
+          }
+        });
+      },
+      Call() {
+        wx.makePhoneCall({
+          phoneNumber: "18742034648"
+        })
+      },
       /**
        * 上拉加载的回调 (页面初始化时也会执行一次)
        * 其中page.num:当前页 从1开始, page.size:每页数据条数,默认10

@@ -10,11 +10,11 @@
           <!-- 手机号 -->
           <view  class="mobile">{{ dataInfo.confirmInfo.mobile }}</view>
         </view>
-        <view class="amount-info">
+        <!-- <view class="amount-info">
             <view class="amount-tip">交易金额（元）</view>
             <view v-if="dataInfo.payMoney" class="amount-num">{{ dataInfo.payMoney.toFixed(2) }}</view>
             <view v-if="!dataInfo.payMoney" class="amount-num">0.00</view>
-        </view>
+        </view> -->
       </view>
       <!-- 未登录 -->
       <view v-if="!isLogin" class="user-info" @click="handleLogin">
@@ -33,14 +33,14 @@
              <view class="text">核销卡券</view>
         </view>
       </view>
-        <view class="item">
+        <!-- <view class="item">
             <view class="tool" @click="scanCodeCashier">
                 <view class="icon">
                     <image class="image" src="/static/icon/saoma.png" mode="scaleToFill"></image>
                 </view>
                 <view class="text">扫码收款</view>
             </view>
-        </view>
+        </view> -->
     </view>
 
     <!-- 概述 -->
