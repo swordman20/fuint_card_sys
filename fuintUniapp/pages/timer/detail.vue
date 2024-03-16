@@ -171,6 +171,9 @@
             if (parseInt(result.code) === 200) {
                 app.detail.isReceive = true;
                 app.$success("领取成功！");
+                console.log("response result = ", result)
+                app.userCouponId = result.data.userCouponId;
+                app.$scope.onLoad({ couponId: app.couponId, userCouponId: app.userCouponId });
             } else {
                 app.$error(result.message);
             }
