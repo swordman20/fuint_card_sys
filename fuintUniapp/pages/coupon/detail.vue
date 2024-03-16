@@ -118,9 +118,12 @@
       // 获取卡券详情
       getCouponDetail() {
         const app = this
+        console.log("app.couponId, app.userCouponId", app.couponId, app.userCouponId)
         myCouponApi.detail(app.couponId, app.userCouponId, "")
           .then(result => {
+            console.log("getCouponDetail result ==  ", result)
             app.detail = result.data
+            console.log("getCouponDetail app.detail ==  ", app.detail)
           })
           .finally(() => app.isLoading = false)
       },
@@ -237,6 +240,9 @@
                         })
                     })
                     // #endif
+                    console.log("response result = ", result)
+                    app.userCouponId = result.data.userCouponId;
+                    app.$scope.onLoad({ couponId: app.couponId, userCouponId: app.userCouponId });
                 } else {
                     app.$error(result.message)
                 }

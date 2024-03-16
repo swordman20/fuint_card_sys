@@ -2,6 +2,7 @@ package com.fuint.module.clientApi.controller;
 
 import com.fuint.common.dto.CouponDto;
 import com.fuint.common.dto.UserInfo;
+import com.fuint.common.enums.UserCouponStatusEnum;
 import com.fuint.common.param.CouponInfoParam;
 import com.fuint.common.param.CouponListParam;
 import com.fuint.common.param.CouponReceiveParam;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -108,8 +110,13 @@ public class ClientCouponController extends BaseController {
 
         // 组织返回参数
         Map<String, Object> result = new HashMap<>();
-        result.put("result", true);
+        List<String> statusList = Arrays.asList(UserCouponStatusEnum.UNUSED.getKey(), UserCouponStatusEnum.USED.getKey(), UserCouponStatusEnum.EXPIRE.getKey());
+        List<MtUserCoupon> userCoupon = mtUserCouponMapper.getUserCouponListByCouponId(couponReceiveParam.getUserId(), couponReceiveParam.getCouponId(), statusList);
+        if (userCoupon.size() > 0) {
+            result.put("userCouponId", userCoupon.get(0).getId());
+        }
 
+        result.put("result", true);
         return getSuccessResult(result);
     }
 
