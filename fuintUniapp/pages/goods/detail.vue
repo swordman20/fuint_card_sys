@@ -473,7 +473,7 @@
   
 .bottom{
  
- height: 30px;
+ height: 38px;
  border-radius: 10rpx;
  padding-top:10rpx;
  padding-bottom:10rpx;
@@ -486,7 +486,7 @@
  display: flex;
  justify-content: flex-start;
  color: #c93131;
- font-size: 22rpx;
+ font-size: 30rpx;
  line-height: 46rpx;
  text-align: center;
 }
@@ -495,15 +495,15 @@
  margin-left:15rpx;
 }
 .receive {
-     height: 46rpx;
+     height: 60rpx;
      width: 128rpx;
-     line-height: 46rpx;
+     line-height: 60rpx;
      text-align: center;
      border: 1px solid #fea68d;
      border-radius: 5rpx;
      color: #FFF;
      background: #efa591;
-     font-size: 22rpx;
+     font-size: 25rpx;
      &.left-box {
        border: 1px solid #c93131;
        color: #c93131;

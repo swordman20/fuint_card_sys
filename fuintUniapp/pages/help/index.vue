@@ -65,7 +65,7 @@
     methods: {
       ctrlC() {
         uni.setClipboardData({
-          data: '18742034648',
+          data: '18866968853',
           success: function () {
             console.log('success');
           }
@@ -73,7 +73,7 @@
       },
       Call() {
         wx.makePhoneCall({
-          phoneNumber: "18742034648"
+          phoneNumber: "18866968853"
         })
       },
       /**

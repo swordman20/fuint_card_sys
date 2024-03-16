@@ -17,6 +17,7 @@ export const info = (param, option) => {
     load: true, //（默认 true 说明：本接口是否提示加载动画）
     ...option
   }
+  console.log("get userinfo params = ", param, options)
   return request.get(api.userInfo, param, options)
 }
 

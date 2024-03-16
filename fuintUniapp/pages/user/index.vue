@@ -225,6 +225,7 @@
       
       // 消息显示
       showMessage();
+      console.log("this = :", this)
     },
 
     methods: {
@@ -245,6 +246,7 @@
           .catch(err => {
             console.log('catch', err)
           })
+          console.log("app = :", app)
       },
 
       // 初始化我的服务数据
@@ -348,9 +350,11 @@
       
       // 会员等级
       onShowPopup(index) {
+        console.log("onShowPopup index = ", index)
         this.showPopup = !this.showPopup
         this.current = index
         this.curGrade = this.memberGrade[index]
+        console.log("this.curGrade = ", this.curGrade)
       },
       
       // 跳转到会员码
@@ -494,7 +498,7 @@
           margin-top: 8rpx;
           border-radius: 10rpx;
           padding: 5rpx 12rpx;
-          width: 80%;
+          width: 100%;
           min-width: 160rpx;
           height: 40rpx;
 

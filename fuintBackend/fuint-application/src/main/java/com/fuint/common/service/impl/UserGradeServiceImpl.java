@@ -194,7 +194,12 @@ public class UserGradeServiceImpl extends ServiceImpl<MtUserGradeMapper, MtUserG
         List<MtUserGrade> dataList = new ArrayList<>();
         if (userGrades.size() > 0 && userInfo != null) {
             for (MtUserGrade grade : userGrades) {
-                if (!userInfo.getGradeId().equals(grade.getId().toString()) && (grade.getGrade() > Integer.parseInt(userInfo.getGradeId()))) {
+                Integer id = Integer.parseInt(userInfo.getGradeId());
+                MtUserGrade mtUserGrade = queryUserGradeById(id, 0);
+                if (null == mtUserGrade) {
+                    return null;
+                }
+                if (!userInfo.getGradeId().equals(grade.getId().toString()) && (grade.getGrade() > mtUserGrade.getGrade())) {
                     dataList.add(grade);
                 }
             }
