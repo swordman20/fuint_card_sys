@@ -14,9 +14,9 @@
           <view class="login-tips" v-if="!isLogin">(点击头像登录)</view>
           <!-- 会员等级 -->
           <view v-if="userInfo.gradeId > 0 && gradeInfo" class="user-grade">
-            <view class="user-grade_icon">
+            <!-- <view class="user-grade_icon">
               <image class="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA0lBMVEUAAAD/tjL/tzH/uDP/uC7/tjH/tzH/tzL/tTH+tTL+tjP/tDD/tTD+tzD/tjL/szD/uDH/tjL/tjL+tjD/tjT/szb/tzL/tTL+uTH+tjL/tjL/tjL/tTT/tjL/tjL+tjH/uTL/vDD/tjL/tjH/tzL9uS//tTL/nBr/sS7/tjH/ujL/szD/uTv+rzf/tzL+tzH+vDP+uzL+tjP+ry7+tDL9ki/7szf/sEX/tTL/tjL+tjL/tTH/tTT/tzH/tzL/tjP/sTX/uTP/wzX+rTn/vDX9vC8m8ckhAAAAOXRSTlMAlnAMB/vjxKWGMh0S6drMiVxPRkEY9PLy0ru0sKagmo5+dGtgVCMgBP716eXWyMGxqJGRe2o5KSmFNjaYAAABP0lEQVQ4y8XS13KDMBAF0AWDDe4t7r3ETu9lVxJgJ/n/X8rKAzHG5TE+Twz3zki7I/g/KXdghIbGJewrU4yzn08Ebgl6TuZzzuOC6W5es3HX6qsSz3NFShRU0MpucytDmOSpu3yULx3CA9RD1HjVedc0jSjqm6ZzhUjDsFDQhSp/OKj5GQvg0+ZCOixsbtDLAeTTOm/yGi8GyIphIVsgH737FEDV44LJa88IRKK/SetrwT9G/GUIr6vXjoy4GXn7+RboVXnghuSjaoGecwQxL2su3CwAKlO+QFoqxI4FMctHQhQd2OhxTu184jWUlI+rMTBTn1/IQcJHQ6GQdZ7pWiDaNdhTt330efISeiqYwQEzQpTlsURJLhzkEmpCPsERfeIUVyXr6MNuIyp5uziW6xURtt7hhGwzmMNJExfO4Bd9X0ZPqAxdNwAAAABJRU5ErkJggg=="></image>
-            </view>
+            </view> -->
             <view class="user-grade_name">
               <text>{{ gradeInfo.name }}</text>
             </view>
@@ -442,7 +442,7 @@
 <style lang="scss" scoped>
   // 页面头部
   .main-header {
-    background: url('~@/static/background/user-header.png') no-repeat;
+    background: url('https://www.gtsmhlife.com/static/vip.png') no-repeat;
     height: 380rpx;
     background-size: cover;
     overflow: hidden;
@@ -494,12 +494,12 @@
         .user-grade {
           display: block;
           align-items: center;
-          background: #3c3c3c;
+          // background: #3c3c3c;
           margin-top: 8rpx;
           border-radius: 10rpx;
           padding: 5rpx 12rpx;
           width: 100%;
-          min-width: 160rpx;
+          min-width: 300rpx;
           height: 40rpx;
 
           .user-grade_icon .image {
@@ -510,8 +510,8 @@
           }
 
           .user-grade_name {
-            margin-left: 5rpx;
-            font-size: 24rpx;
+            margin-left: 0rpx;
+            font-size: 35rpx;
             color: #EEE0C3;
             float: left;
           }
