@@ -32,3 +32,6 @@ CREATE TABLE `mt_stock_item` (
   `STATUS` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'A' COMMENT '订单状态',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='库存管理明细表';
+
+ALTER TABLE mt_store ADD COLUMN images varchar(255) DEFAULT NULL COMMENT '店铺图片';
+ALTER TABLE mt_store ADD COLUMN detail_description varchar(100) DEFAULT NULL COMMENT '详情描述';

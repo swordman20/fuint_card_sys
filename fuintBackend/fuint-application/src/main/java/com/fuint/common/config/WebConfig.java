@@ -29,10 +29,14 @@ public class WebConfig extends WebMvcConfigurationSupport {
                 .resourceChain(false)
                 .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"))
                 .addTransformer(new CssLinkResourceTransformer());
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        
+        // 使用相对路径，更具可移植性
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/static/", "file:./static/");
 
-        registry.addResourceHandler("/**").addResourceLocations(
-                "classpath:/static/");
+        // 注释掉这个通配符配置，避免覆盖上面的配置
+        // registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+        
         registry.addResourceHandler("swagger-ui.html").addResourceLocations(
                 "classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations(
